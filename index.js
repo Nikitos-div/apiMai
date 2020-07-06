@@ -4,6 +4,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const urlencodedParser = bodyParser.urlencoded({ extended: true });
 const articlesRoutes = require('./router/article/router.js')
+const userRoutes = require('./router/user/router.js')
 app.get('/', function (req, res) {
     res.send('Hello World!');
 });
@@ -20,6 +21,7 @@ app.use(async (req, res, next) => {
 
 
 app.use('/article', articlesRoutes)
+app.use('/user', userRoutes)
 
 
 
